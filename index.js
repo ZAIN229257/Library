@@ -1,9 +1,14 @@
 const myLibrary = [];
 
-function Book(id, Title, name) {
-  this.id = id;
-  this.Title = Title;
-  this.name = name;
+class Book {
+  constructor(id, title, name) {
+    this.id = id;
+    this.Title = title;
+    this.name = name;
+  }
+  read() {
+    console.log("Reading...");
+  }
 }
 
 function addBookToLibrary() {
@@ -26,10 +31,10 @@ function addBookToLibrary() {
     bookCard.classList.add("book-card");
 
     const titleElement = document.createElement("h3");
-    titleElement.textContent = `العنوان: ${userbookTitle}`;
+    titleElement.textContent = `Title: ${userbookTitle}`;
 
     const authorElement = document.createElement("p");
-    authorElement.textContent = `الكاتب: ${userbookAuthor}`;
+    authorElement.textContent = `Author: ${userbookAuthor}`;
 
     const idElement = document.createElement("small");
     idElement.textContent = `id: ${userbookId}`;
@@ -46,6 +51,9 @@ function addBookToLibrary() {
     dButton.textContent = "delet";
 
     dButton.addEventListener("click", function () {
+      const index = myLibrary.indexOf(newbook);
+
+      myLibrary.splice(index, 1);
       bookCard.remove();
     });
 
@@ -56,10 +64,10 @@ function addBookToLibrary() {
     bookCard.appendChild(idElement);
     bookCard.appendChild(readText);
     bookCard.appendChild(dButton);
-
     bookId.value = "";
     bookTitle.value = "";
     bookAuthor.value = "";
   });
 }
+
 addBookToLibrary();

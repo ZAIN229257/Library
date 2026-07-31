@@ -1,0 +1,182 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  padding: 40px 20px;
+}
+
+/* Main title */
+h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 42px;
+  color: #1f2937;
+  letter-spacing: -1px;
+}
+
+/* Inputs section */
+input {
+  display: block;
+  width: min(400px, 90%);
+  margin: 12px auto;
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  font-size: 16px;
+  background: white;
+
+  transition: 0.25s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3225eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Add button */
+#addBtn {
+  display: block;
+  margin: 25px auto 40px;
+
+  padding: 13px 35px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+#addBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+#addBtn:active {
+  transform: translateY(0);
+}
+
+/* Library container */
+#library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 25px;
+
+  width: min(1000px, 90%);
+  margin: auto;
+}
+
+/* Book card */
+.book-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  border: 1px solid #e5e7eb;
+
+  transition: 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Book text */
+.book-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+
+  color: #111827;
+}
+
+.book-card p {
+  margin: 10px 0;
+
+  color: #4b5563;
+
+  font-size: 15px;
+}
+
+.book-card small {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #9ca3af;
+}
+
+/* Checkbox */
+.book-card input[type="checkbox"] {
+  width: auto;
+
+  margin-left: 8px;
+
+  cursor: pointer;
+}
+
+/* Delete button */
+.book-card button {
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.book-card button:hover {
+  background: #dc2626;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  body {
+    padding: 25px 10px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  #library {
+    width: 95%;
+  }
+}
